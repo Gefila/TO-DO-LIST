@@ -38,6 +38,10 @@ input[type="submit"] {
 	width: 20%;
 }
 
+.checked{
+	text-decoration: line-through;
+}
+
 .todo {
 	display: flex;
 	background-color: #123597;
@@ -68,3 +72,4 @@ input[type="submit"] {
 	padding: 0.4rem;
 	text-align: center;
 }
+

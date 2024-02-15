@@ -1,4 +1,4 @@
-let listToDo = [];
+let listToDo = ["sadada","dasdasd","adad"];
 
 feather.replace();
 
@@ -24,7 +24,7 @@ function showToDo() {
 		todo.innerHTML = `
         <input type="checkbox" name="ceklis" id="ceklis" />
         <div class="do">${listToDo[i]}</div>
-        <div class="x"><i data-feather="x" class="feather"></i></div>
+        <div class="x" onclick=deletes(${[i]})><i data-feather="x" class="feather"></i></div>
         `;
 		list.appendChild(todo);
 		todo.classList.add("todo");
@@ -39,3 +39,11 @@ function clear() {
 		list.removeChild(list.firstChild);
 	}
 }
+
+function deletes(index){
+    listToDo.splice(index,1)
+	showToDo()
+}
+
+
+
