@@ -1,5 +1,73 @@
 * {
 	margin: 0;
 	padding: 0;
-    box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+main {
+	background-image: linear-gradient(135deg, #97abff 10%, #123597 100%);
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	padding: 1rem;
+	background-color: wheat;
+	max-width: 80%;
+}
+header {
+	background-color: white;
+	padding: 0.8rem 8rem;
+}
+
+.wrap-input {
+	display: flex;
+}
+
+input {
+	padding: 0.5rem;
+}
+input[type="text"] {
+	width: 80%;
+}
+
+input[type="submit"] {
+	width: 20%;
+}
+
+.todo {
+	display: flex;
+	background-color: #123597;
+	padding: 0.5rem 0.5rem;
+	align-items: center;
+	position: relative;
+	margin-bottom: 0.1rem;
+}
+
+.do {
+	justify-self: flex-end;
+	color: white;
+	padding: 0 0.5rem;
+}
+
+.x {
+	margin-left: auto;
+	display: flex;
+	justify-content: center;
+	padding: 0.1rem;
+	background-color: white;
+}
+
+.x .feather {
+	height: 1rem;
+	width: 1rem;
+}
+
+.todo .remove {
+	background-color: #97abff;
+	padding: 0.4rem;
+	text-align: center;
 }
