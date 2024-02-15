@@ -13,9 +13,9 @@
 				<header>TO DO LIST</header>
 				<div class="wrap-input">
 					<input type="text" id="toDoInput" />
-					<input type="submit" value="ADD" />
+					<input type="submit" value="ADD" id="input" onclick="add()"/>
 				</div>
-				<div class="list">
+				<div class="list" id="list">
 					<div class="todo">
 						<input type="checkbox" name="ceklis" id="ceklis" />
 						<div class="do">mandi</div>
@@ -25,9 +25,7 @@
 			</div>
 		</main>
 
-		<script>
-			feather.replace();
+		<script src="script.js">
 		</script>
-		<script src="script.js"></script>
 	</body>
 </html>
