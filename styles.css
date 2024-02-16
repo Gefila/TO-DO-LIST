@@ -23,10 +23,20 @@ main {
 
 header {
 	background-color: #27187e;
-	padding: 0.8rem 8rem;
+	padding: 0.5rem 6rem;
 	color: #ffffff;
 	font-family: "Fredoka", sans-serif;
 	border-radius: 0.3rem 0.3rem 0 0;
+	word-break: normal;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.title {
+	min-width: 10rem;
+	height: 100%;
+	text-align: center;
 }
 
 .wrap-input {
@@ -57,10 +67,10 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
 	color: #27187e;
-	cursor: pointer;	
+	cursor: pointer;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
 	cursor: pointer;
 }
 
