@@ -16,32 +16,35 @@ function add(e) {
 function showToDo() {
 	const list = document.getElementById("list");
 
-	list.innerHTML= ""
+	list.innerHTML = "";
 	listToDo.forEach((value, index) => {
 		const todo = document.createElement("div");
 
-		const checkbox = document.createElement("input")
-		checkbox.type = "checkbox"
-		checkbox.checked = value.startsWith("_x_")
-		checkbox.addEventListener('change', ()=> toggle(index))
-		
-		const task = document.createElement('div')
-		task.textContent = value.startsWith("_x_") ? value.slice(3) : value
+		const checkbox = document.createElement("input");
+		checkbox.type = "checkbox";
+		checkbox.checked = value.startsWith("_x_");
+		checkbox.addEventListener("change", () => toggle(index));
 
-		if(value.startsWith("_x_")){
-			task.classList.add('checked')
+		const task = document.createElement("div");
+		task.textContent = value.startsWith("_x_") ? value.slice(3) : value;
+
+		if (value.startsWith("_x_")) {
+			todo.classList.add("checked");
+			task.style.color = "#27187e";
 		}
 
-		task.classList.add("do")
+		task.classList.add("do");
 
-		const remove = document.createElement('div')
-		remove.classList.add('x')
-		remove.innerHTML = '<i data-feather="x" class="feather"></i>'
-		remove.onclick = ()=>deletes(index)
+		const remove = document.createElement("div");
+		remove.classList.add("x");
+		remove.innerHTML = '<i data-feather="x" class="feather"></i>';
+		remove.onclick = (e) => {
+			deletes(index);
+		};
 
-		todo.appendChild(checkbox)
-		todo.appendChild(task)
-		todo.appendChild(remove)
+		todo.appendChild(checkbox);
+		todo.appendChild(task);
+		todo.appendChild(remove);
 
 		todo.classList.add("todo");
 		list.appendChild(todo);
@@ -54,7 +57,9 @@ function deletes(index) {
 	showToDo();
 }
 
-function toggle(index){
-	listToDo[index] = listToDo[index].startsWith('_x_') ? listToDo[index].slice(3) : "_x_" + listToDo[index]
-	showToDo()
+function toggle(index) {
+	listToDo[index] = listToDo[index].startsWith("_x_")
+		? listToDo[index].slice(3)
+		: "_x_" + listToDo[index];
+	showToDo();
 }

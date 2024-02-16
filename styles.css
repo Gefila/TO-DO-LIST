@@ -15,12 +15,18 @@ main {
 
 .container {
 	padding: 1rem;
-	background-color: wheat;
+	background-color: #a9def9;
+	border-radius: 0.4rem;
+	min-height: 20rem;
 	max-width: 80%;
 }
+
 header {
-	background-color: white;
+	background-color: #27187e;
 	padding: 0.8rem 8rem;
+	color: #ffffff;
+	font-family: "Fredoka", sans-serif;
+	border-radius: 0.3rem 0.3rem 0 0;
 }
 
 .wrap-input {
@@ -30,31 +36,53 @@ header {
 input {
 	padding: 0.5rem;
 }
+
 input[type="text"] {
 	width: 80%;
+	border: none;
+	font-family: "Fredoka", sans-serif;
+}
+
+input[type="text"]:focus {
+	outline: none;
 }
 
 input[type="submit"] {
 	width: 20%;
+	border: none;
+	background-color: #ff8600;
+	color: #ffffff;
+	font-family: "Fredoka", sans-serif;
 }
 
-.checked{
+input[type="submit"]:hover {
+	color: #27187e;
+	cursor: pointer;	
+}
+
+input[type="checkbox"]{
+	cursor: pointer;
+}
+
+.checked {
 	text-decoration: line-through;
 }
 
 .todo {
 	display: flex;
-	background-color: #123597;
+	background-color: #758bfd;
 	padding: 0.5rem 0.5rem;
 	align-items: center;
 	position: relative;
-	margin-bottom: 0.1rem;
+	margin: 0.2rem 0;
+	border-radius: 0.2rem;
 }
 
 .do {
 	justify-self: flex-end;
 	color: white;
 	padding: 0 0.5rem;
+	font-family: "Fredoka", sans-serif;
 }
 
 .x {
@@ -63,13 +91,18 @@ input[type="submit"] {
 	justify-content: center;
 	padding: 0.1rem;
 	background-color: white;
+	border-radius: 0.2rem;
+	transition: 0.25s ease-in-out;
 }
 
-
+.x:hover {
+	background-color: #123597;
+	color: white;
+	cursor: pointer;
+}
 
 .todo .remove {
 	background-color: #97abff;
 	padding: 0.4rem;
 	text-align: center;
 }
-
