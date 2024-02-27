@@ -1,34 +1,49 @@
 let listToDo = [];
+const listToDos = JSON.parse(localStorage.getItem("todo"));
+
+window.onload = () => {
+	if (listToDos.length > 0) {
+		listToDo = listToDos;
+		showToDo();
+	}
+};
 
 feather.replace();
 
 function add(e) {
 	const toDoInput = document.getElementById("toDoInput");
 	if (toDoInput.value != "") {
-		listToDo.push(toDoInput.value);
+		listToDo.push({ text: toDoInput.value, completed: false });
 		toDoInput.value = "";
+		saveToLocalstorage();
 		showToDo();
 	} else {
 		alert("MASUKKAN TO DO");
 	}
 }
 
+function saveToLocalstorage() {
+	localStorage.setItem("todo", JSON.stringify(listToDo));
+}
+
 function showToDo() {
 	const list = document.getElementById("list");
 
 	list.innerHTML = "";
-	listToDo.forEach((value, index) => {
+	const listToDos = JSON.parse(localStorage.getItem("todo"));
+
+	listToDos.forEach((value, index) => {
 		const todo = document.createElement("div");
 
 		const checkbox = document.createElement("input");
 		checkbox.type = "checkbox";
-		checkbox.checked = value.startsWith("_x_");
+		checkbox.checked = value.completed;
 		checkbox.addEventListener("change", () => toggle(index));
 
 		const task = document.createElement("div");
-		task.textContent = value.startsWith("_x_") ? value.slice(3) : value;
+		task.textContent = value.text;
 
-		if (value.startsWith("_x_")) {
+		if (value.completed) {
 			todo.classList.add("checked");
 			task.style.color = "#27187e";
 		}
@@ -54,12 +69,12 @@ function showToDo() {
 
 function deletes(index) {
 	listToDo.splice(index, 1);
+	saveToLocalstorage();
 	showToDo();
 }
 
 function toggle(index) {
-	listToDo[index] = listToDo[index].startsWith("_x_")
-		? listToDo[index].slice(3)
-		: "_x_" + listToDo[index];
+	listToDo[index].completed = !listToDo[index].completed;
+	saveToLocalstorage();
 	showToDo();
 }
